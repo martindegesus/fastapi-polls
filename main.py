@@ -1,3 +1,7 @@
+import datetime
+import databases
+import sqlalchemy
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -12,7 +16,7 @@ class Poll(BaseModel):
     type: str
     is_add_choices_active: bool
     is_voting_active: bool
-    created_by: User
+    created_by: int
 
 @app.get("/")
 async def root():
